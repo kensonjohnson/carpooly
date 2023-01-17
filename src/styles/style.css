@@ -6,7 +6,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #1c243a;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -95,3 +95,17 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/*
+Orange--
+Light: #3FFB7E8; Dark-Light: #DDa382; Dusk: #5C3C29; Bright-Dark: #B0521D; Bright: #FF5C00;
+
+Blue--
+Light: #95D7FF; Dark-Light: #56788D; Dusk: #1c243a; Bright-Dark: #184f70; Bright: #0280ca;
+
+Green:
+Light: #beff96; Dark-Light: #66ae6b; Dusk: #214823; Bright-Dark: #178a1e; Bright: #00e00f;
+
+Aqua:
+Light: #8effe0; Dark-Light: #559180; Dusk: #1b3c33; Bright-Dark: #137359; Bright: #00cd94;
+*/

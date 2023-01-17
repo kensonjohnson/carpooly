@@ -1,0 +1,98 @@
+Target Demographic:
+Working Class, Lower/ Mid earners/ Male/ Mobile focused
+
+Dark Mode:
+__________________________________________________________________________________-
+LOGOS
+Favicon:
+font:
+background:
+colors:
+ratios
+link:
+
+PictureLogo (handclasping taichi or car peeps)
+font:
+background:
+colors:
+ratios
+link:
+
+TearDropLogo
+font:
+background:
+colors:
+ratios
+link:
+
+Banner
+font:
+background:
+colors:
+ratios
+link:
+
+______________________________________________________________________________________
+HTML CORE
+header-
+font:
+font-size:
+background:
+colors:
+
+body-
+back-ground-color:
+Blue Dusk: #1c243a
+formatting:
+
+headings-
+h1- font-size:
+h2- font-size:
+h3- font-size:
+h4- font-size:
+h5- font-size:
+h6- font-size:
+
+card- (generic container that holds misc data etc that's stylized appropriately)
+
+paragraph-
+font:
+font-size:
+color:
+styling:
+
+footer-
+font:
+font-size:
+color:
+styling:
+
+____________________________________________________________________________
+BUTTONS
+GeneralStyles (priority)-
+SeeMoreContent-
+SeeLessContent-
+Pay-
+
+____________________________________________________________________________
+PAGE BUTTONS
+____________________________________________________________________________
+PAGE LAYOUTS
+
+Landing- (login/sign-up page)
+header-
+main content:
+flex-direction: columns;
+footer-
+
+Dashboard- "Holy Grail Layout"
+header-
+main content:
+flex-direction: rows;
+left- navigation pane(aside)-
+right- main content-flex direction-columns
+footer-
+
+____________________________________________________________________________
+____________________________________________________________________________
+Light Mode:

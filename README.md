@@ -1,19 +1,19 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/codewizard13/udd-group-project-carpooly">
-    <img src="docs/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/kensonjohnson/carpooly">
+    <img src="src/assets/.TearDropDark.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Carpooly App</h3>
 
   <p align="center">
     <br />
-    <!-- <a href="https://github.com/codewizard13/udd-group-project-carpooly">View Demo</a>
+    <!-- <a href="https://github.com/kensonjohnson/carpooly">View Demo</a>
     · -->
-    <a href="https://github.com/codewizard13/udd-group-project-carpooly/issues">Report Bug</a>
+    <a href="https://github.com/kensonjohnson/carpooly/issues">Report Bug</a>
     ·
-    <a href="https://github.com/codewizard13/udd-group-project-carpooly/issues">Request Feature</a>
+    <a href="https://github.com/kensonjohnson/carpooly/issues">Request Feature</a>
   </p>
 </div>
 
@@ -79,7 +79,7 @@ You'll need node version 18 or higher.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/codewizard13/udd-group-project-carpooly.git
+   git clone https://github.com/kensonjohnson/carpooly.git
    ```
 2. Install NPM packages
    ```sh
@@ -107,7 +107,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Feature 3
   - [ ] Nested Feature
 
-See the [open issues](https://github.com/codewizard13/udd-group-project-carpooly/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/kensonjohnson/carpooly/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -136,7 +136,7 @@ We are a small group of self taught developers expanding our skillsets!
 
 ## Contact
 
-Project Link: [https://github.com/codewizard13/udd-group-project-carpooly](https://github.com/codewizard13/udd-group-project-carpooly)
+Project Link: [Carpooly](https://github.com/kensonjohnson/carpooly)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

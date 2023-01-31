@@ -4,6 +4,7 @@
 *::after {
   box-sizing: border-box;
 }
+@import url("");
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -27,6 +28,7 @@
   --green-dark-light: #66ae6b;
   --green-dusk: #214823;
   --green-darkest: #072408;
+  --green-banner: #192D05;
   --green-bright-dark: #178a1e;
   --green-bright: #00e00f;
   
@@ -48,10 +50,18 @@
 }
 
 header {
-  background-color: var(--green-darkest);
-  width: 100vw;
+  background-color: var(--green-banner);
+  width: 100%;
   height: 15vh;
+  display: flexbox;
+  justify-content: center;
 }
+/* 
+header > header-banner {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+} */
 body {
   margin: 0;
   display: inline-block;
@@ -70,8 +80,11 @@ body {
 }
 
 #main {
+  display: flex;
+  flex-direction: column;
   flex: 1;
   flex-grow: 45;
+  align-items: center;
 }
 
 #nav {
@@ -80,9 +93,23 @@ body {
   order: -1;
 }
 
+#tear-drop {
+  border-color: var(--orange-dusk);
+  border-style: double;
+  border-width: 7px;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+button {
+  font-size: 120%;
+  padding: 10px;
+  background-color: var(--orange-bright);
+  color: var(--green-darkest);
+
 }
 /* 
 @media (prefers-color-scheme: light) {

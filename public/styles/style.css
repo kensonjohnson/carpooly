@@ -61,7 +61,7 @@ header {
 
 body {
   margin: 0;
-  display: inline-block;
+  display: flex;
   flex-direction: column;
   place-items: center;
   min-height: 100vh;
@@ -73,21 +73,19 @@ body {
   height: 85vh;
   display: flex;
   flex-direction: row;
-  flex: 1;
+  width:  100%;
 }
 
 #main {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  flex-grow: 45;
+  flex-grow: 4;
   align-items: center;
 }
 
 #nav {
   background-color: var(--aqua-dusk);
   flex-grow: 1;
-  order: -1;
 }
 
 #tear-drop {
@@ -111,7 +109,7 @@ button {
   padding: 10px;
   background-color: var(--orange-bright);
   color: var(--green-darkest);
-  /* border: 25px solid (var(--aqua-bright-dark)) */
+  border: 25px solid var(--aqua-bright-dark)
 }
 
 footer {

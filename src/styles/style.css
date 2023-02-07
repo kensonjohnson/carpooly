@@ -53,15 +53,12 @@ header {
   background-color: var(--green-banner);
   width: 100%;
   height: 15vh;
-  display: flexbox;
-  justify-content: center;
-}
-/* 
-header > header-banner {
   display: flex;
   flex-direction: column;
-  justify-items: center;
-} */
+  align-items: center;
+  justify-content: center;
+}
+
 body {
   margin: 0;
   display: inline-block;
@@ -104,12 +101,23 @@ h1 {
   line-height: 1.1;
 }
 
+/* info {
+  background-color: var(--aqua-bright-dark);
+  border: 5px solid var(--orange-dusk);
+} */
+
 button {
   font-size: 120%;
   padding: 10px;
   background-color: var(--orange-bright);
   color: var(--green-darkest);
+  /* border: 25px solid (var(--aqua-bright-dark)) */
+}
 
+footer {
+  width: 100%;
+  height: 90px;
+  background-color: var(--green-banner);
 }
 /* 
 @media (prefers-color-scheme: light) {

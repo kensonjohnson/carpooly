@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/kensonjohnson/carpooly">
-    <img src="src/assets/TearDropDark.png" alt="Logo" width="80" height="80">
+    <img src="web/public/assets/TearDropDark.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Carpooly App</h3>

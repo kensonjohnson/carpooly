@@ -49,13 +49,15 @@ We are a small group of self taught developers
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Built With
+### Built With:
 
-- ![HTML]
-- ![CSS]
-- ![JavaScript]
-- [![Vite][vite]][vite-url]
-<!-- - [![FireBase][firebase]][firebase-url] -->
+![HTML]
+![CSS]
+![JavaScript]
+[![Vite][vite]][vite-url]  
+ [![Mongo][mongodb]][mongodb-url]
+[![Express][express]][express-url]
+[![Passport][passport]][passport-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -66,29 +68,53 @@ We are a small group of self taught developers
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+<br />
 
-You'll need node version 18 or higher.
+## Installation
 
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
+<br />
 
-### Installation
+Clone the repo:
 
-1. Clone the repo
-   ```sh
-   git clone https://github.com/kensonjohnson/carpooly.git
-   ```
-2. Install NPM packages
-   ```sh
+```sh
+git clone https://github.com/kensonjohnson/carpooly.git
+```
+
+<br />
+
+### Web Instructions
+
+<br />
+
+1. You'll need node version 18 or higher.
+
+```sh
+   npm install npm@latest -g
+```
+
+2. Move to the Web Project folder.
+
+```sh
+   cd web
+```
+
+3. Install dependencies.
+
+```sh
    npm install
-   ```
-3. Run the develpment server
-   ```
+```
+
+4. Run the develpment server
+
+```
    npm run dev
-   ```
+```
+
+<br />
+
+### Mobile Instructions
+
+1. TBD
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -148,5 +174,9 @@ Project Link: [Carpooly](https://github.com/kensonjohnson/carpooly)
 [javascript]: https://img.shields.io/badge/Javascript-20232A?style=for-the-badge&logo=javascript&logoColor=#F7DF1E
 [vite]: https://img.shields.io/badge/Vite-20232A?style=for-the-badge&logo=vite&logoColor=#646CFF
 [vite-url]: https://vitejs.dev/
-[firebase]: https://img.shields.io/badge/Firebase-20232A?style=for-the-badge&logo=firebase&logoColor=#FFCA28
-[firebase-url]: https://firebase.google.com/
+[mongodb]: https://img.shields.io/badge/MongoDB-20232A?style=for-the-badge&logo=mongodb&logoColor=#47A248
+[mongodb-url]: https://mongodb.com/
+[express]: https://img.shields.io/badge/Express-20232A?style=for-the-badge&logo=express&logoColor=#000000
+[express-url]: https://expressjs.com/
+[passport]: https://img.shields.io/badge/Passport-20232A?style=for-the-badge&logo=passport&logoColor=#34E27A
+[passport-url]: https://www.passportjs.org/

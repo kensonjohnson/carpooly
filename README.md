@@ -112,6 +112,25 @@ git clone https://github.com/kensonjohnson/carpooly.git
 
 <br />
 
+### Web Cont: Prepare MongoDB Connection File
+
+Create a file in the root directory called .env and add the following:
+
+```
+DB_CLUSTER_NAME=YOUR_CLUSTER_ADDRESS
+DB_NAME=YOUR_DB_NAME
+DB_USER=YOUR_DB_USERNAME
+DB_PASSWORD=YOUR_DB_USER_PASSWORD
+PORT=YOUR_PORT_CHOICE
+```
+
+Replace YOUR_CLUSTER_ADDRESS with your MongoDB URI, local or Atlas information.
+Replace YOUR_DB_NAME with the database on that cluster you want to use.
+Replace YOUR_DB_USERNAME and YOUR_DB_USER_PASSWORD with admin user info for that database.
+Replace YOUR_PORT_CHOICE with whatever port you want to use. You can just use 5000 if you're in development.
+
+If you're using Mongo Atlas, you should add 0.0.0.0/0 to the allowed IP list until development is done. REMEMBER TO CHANGE THIS TO YOUR SERVER IP UPON DEPLOYMENT.
+
 ### Mobile Instructions
 
 1. TBD

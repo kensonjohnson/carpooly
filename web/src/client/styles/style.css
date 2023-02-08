@@ -1,10 +1,9 @@
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-@import url("");
+/* @import url(""); */
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -12,26 +11,26 @@
   line-height: 24px;
   font-weight: 400;
 
-  --orange-light: #FFB7E8;
-  --orange-dark-light: #DDa382;
-  --orange-dusk: #5C3C29;
-  --orange-bright-dark: #B0521D;
-  --orange-bright: #FF5C00;
-  
-  --blue-light: #95D7FF;
-  --blue-dark-light: #56788D;
+  --orange-light: #ffb7e8;
+  --orange-dark-light: #dda382;
+  --orange-dusk: #5c3c29;
+  --orange-bright-dark: #b0521d;
+  --orange-bright: #ff5c00;
+
+  --blue-light: #95d7ff;
+  --blue-dark-light: #56788d;
   --blue-dusk: #1c243a;
   --blue-bright-dark: #184f70;
   --blue-bright: #0280ca;
-  
+
   --green-light: #beff96;
   --green-dark-light: #66ae6b;
   --green-dusk: #214823;
   --green-darkest: #072408;
-  --green-banner: #192D05;
+  --green-banner: #192d05;
   --green-bright-dark: #178a1e;
   --green-bright: #00e00f;
-  
+
   --aqua-light: #8effe0;
   --aqua-dark-Light: #559180;
   --aqua-dusk: #1b3c33;
@@ -73,7 +72,7 @@ body {
   height: 85vh;
   display: flex;
   flex-direction: row;
-  width:  100%;
+  width: 100%;
 }
 
 #main {
@@ -109,7 +108,7 @@ button {
   padding: 10px;
   background-color: var(--orange-bright);
   color: var(--green-darkest);
-  border: 25px solid var(--aqua-bright-dark)
+  border: 25px solid var(--aqua-bright-dark);
 }
 
 footer {

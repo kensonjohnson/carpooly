@@ -10,7 +10,6 @@ import session from "express-session";
 import passport from "passport";
 import indexRouter from "./routes/index.js";
 import usersRouter from "./routes/users.js";
-import ViteExpress from "vite-express";
 
 const app = express();
 
@@ -68,4 +67,4 @@ app.use("/users", usersRouter);
 
 const PORT = process.env.PORT || 5000;
 
-ViteExpress.listen(app, PORT, console.log(`Server Started on port: ${PORT}`));
+app.listen(PORT);

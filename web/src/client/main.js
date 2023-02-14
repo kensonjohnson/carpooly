@@ -1,4 +1,3 @@
-import "./styles/style.css";
 const signUpButton = document.getElementById("signup");
 const logInButton = document.getElementById("login");
 

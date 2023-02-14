@@ -1,17 +1,14 @@
 import { Router } from "express";
+import { appendFile } from "fs";
 const router = Router();
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { ensureAuthenticated } from "../config/auth.js";
 
 // Welcome Page
-
-// Dashboard
-// router.get("/dashboard", ensureAuthenticated, (req, res) => {
-//   res.render("dashboard", {
-//     name: req.user.name,
-//   });
-// });
+router.get("/", (req, res) => {
+  res.sendFile("index.html", { root: "public" });
+});
 
 router.get("/dashboard", ensureAuthenticated, (req, res) => {
   res.sendFile("dashboard.html", { root: "public" });

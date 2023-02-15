@@ -3,7 +3,6 @@
 *::after {
   box-sizing: border-box;
 }
-@import url("");
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -89,7 +88,7 @@ body {
 }
 
 .info {
-  background-image: url(/public/assets/InfoBackGround-Dark.svg);
+  background-image: url(assets/InfoBackGround-Dark.svg);
   min-width: 80vw;
   min-height: 300px;
 }
@@ -121,7 +120,7 @@ p {
 } */
 
 #profile-pic {
-  background-image: url("public/assets/default_profile_pic.png");
+  background-image: url("assets/default_profile_pic.png");
 }
 
 button {

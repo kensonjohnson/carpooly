@@ -55,6 +55,7 @@ body {
   height: 100vh;
   width: 100vw;
   justify-content: start;
+  color: var(--orange-dark-light);
 }
 
 header {
@@ -66,13 +67,6 @@ header {
   align-items: center;
   justify-content: center;
 }
-
-/* #mainAndNav {
-  height: 85vh;
-  display: flex;
-  flex-direction: row;
-  width:  100%;
-} */
 
 #main {
   display: flex;
@@ -114,6 +108,59 @@ p {
   color: var(--orange-light);
 }
 
+button {
+  background-color: var(--aqua-dusk);
+  font-size: 100%;
+  padding: 10px;
+  border-radius: 25%;
+  color: var(--orange-dark-light);
+  border: 5px solid var(--orange-bright-dark);
+}
+
+#entry-form {
+  /* background-color: var(--aqua-bright-dark); */
+  padding: 15%;
+  margin-top: 10%;
+  border-radius: 5%;
+  border: 10px solid var(--orange-);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#login-form{
+  background-color: var(--green-dusk);
+  padding: 15%;
+  border: 5px solid var(--orange-bright-dark);
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-pieces {
+  background-color: var(--aqua-dusk);
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 5%
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#login-button {
+  width: 100%;
+  font-size: large;
+  border-radius: 50%;
+  border-color: var(--orange-light);
+}
+
+#register {
+  font-size: 2vh;
+}
+
 /* info {
   background-color: var(--aqua-bright-dark);
   border: 5px solid var(--orange-dusk);
@@ -123,26 +170,15 @@ p {
   background-image: url("assets/default_profile_pic.png");
 }
 
-button {
-  background-color: var(--green-darkest);
-  font-size: 70%;
-  padding: 10px;
-  border-radius: 50%;
-  color: var(--aqua-light);
-  border: 5px solid var(--aqua-bright-dark);
-}
-
 footer {
   width: 100%;
   height: 90px;
+  font-size: 3vh;
   background-color: var(--green-banner);
 }
 /* 
 @media (prefers-color-scheme: light) {
-  #mainAndNav {
-    flex-direction: row;
-    flex: 1;
-  }
+
   #main {
     flex: 1;
   }

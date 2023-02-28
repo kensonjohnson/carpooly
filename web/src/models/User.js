@@ -7,6 +7,4 @@ const UserSchema = new Schema({
   date: { type: Date, default: Date.now },
 });
 
-const User = model("User", UserSchema);
-
-export default User;
+export default model("User", UserSchema);

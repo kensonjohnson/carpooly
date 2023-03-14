@@ -118,7 +118,20 @@ header {
 
 .info {
   background-image: url(assets/InfoBackGround-Dark.svg);
-  min-height: 20vh;
+  min-width: 80vw;
+  height: 0px;
+  transition: height 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.window-expand {
+  height: 300px;
+}
+
+.window-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #tear-drop {
@@ -159,7 +172,6 @@ button {
 
 .form-h1 {
   font-size: 3.2em;
-  /* line-height: 1.1; */
 }
 
 .form-input {
@@ -186,11 +198,6 @@ button {
   font-size: 2vh;
 }
 
-/* info {
-  background-color: var(--aqua-bright-dark);
-  border: 5px solid var(--orange-dusk);
-} */
-
 #profile-pic {
   background-image: url("assets/default_profile_pic.png");
 }
@@ -201,21 +208,3 @@ footer {
   font-size: 3vh;
   background-color: var(--green-banner);
 }
-/* 
-@media (prefers-color-scheme: light) {
-
-  #main {
-    flex: 1;
-  }
-  #nav {flex: 0 0 12em}
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */

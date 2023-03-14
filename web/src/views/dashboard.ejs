@@ -1,27 +1,31 @@
-    <div>
-      <h3>Hello, <%= user %></h3>
-      <a href="/users/logout">Logout</a>
-    </div>
-    <div id="currentCarpools">
-    <h2 class="Title">My Current Carpools<button class="button" id="carpools">+ -</button></h2>
-    <div class="info" id="carpoolInfo">
-      <div class="window">
-        <p>You don't have any Carpools! Search below to find one!</p>
-      </div>
-    </div>
+<div>
+  <h3>Hello, <%= user %></h3>
+  <a href="/users/logout">Logout</a>
+</div>
+<div class="windows">
+  <div class="heading">
+    <h2 class="title">My Current Carpools</h2>
+    <button class="button">+ -</button>
   </div>
-  <div id="find">
-    <h2 class="Title">Find My Carpools/ Friends<button class="button" id="friends">+ -</button></h2>
-    <div class="info" id="findMyPeeps">
-      <input id="searchPeeps">
-    </div>
+  <div class="info" data-carpool-info>
+    <p>You don't have any Carpools! Search below to find one!</p>
   </div>
-  <div id="myProfile">
-    <h2 class="Title">My Profile!<button class="button" id="profile">+ -</button>
-    </h2>
-    <div class="info" id="carpoolInfo">
-      <img id="profile-pic">
-      <p>This is who I am!</p>
-      <p>I am looking for......</p>
-    </div>
+</div>
+<div class="windows">
+  <h2 class="Title">
+    Find My Carpools/ Friends<button class="button">+ -</button>
+  </h2>
+  <div class="info" id="findMyPeeps">
+    <input id="searchPeeps" />
   </div>
+</div>
+<div class="windows">
+  <h2 class="Title">
+    My Profile!<button class="button" id="profile">+ -</button>
+  </h2>
+  <div class="info" id="profileInfo">
+    <img id="profile-pic" />
+    <p>This is who I am!</p>
+    <p>I am looking for......</p>
+  </div>
+</div>

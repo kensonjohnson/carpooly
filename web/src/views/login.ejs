@@ -1,23 +1,16 @@
-  <div class="row mt-5">
-    <div class="col-md-6 m-auto">
-      <div class="card card-body">
-        <div id="entry-form">
-          <h1 class="text-center mb-3"><i class="iconoir-log-in"></i> Login</h1>
-        <form action="/users/login" method="POST" id="login-form">
-          <div class="form-group">
+
+        <form action="/users/login" method="POST" class="login-form">
+          <h1 class="form-h1">Login</h1>
+          <div class="form-input">
             <label for="email">Email</label>
-            <input type="email" class="login-pieces" name="email" class="form-control" placeholder="Enter Email" />
+            <input type="email" name="email" placeholder="Enter Email" />
           </div>
-          <div class="form-group">
+          <div class="form-input">
             <label for="password">Password</label>
-            <input type="password" class="login-pieces" name="password" class="form-control"placeholder="Enter Password" />
+            <input type="password" name="password" placeholder="Enter Password"/>
           </div>
-          <button type="submit" class="btn btn-primary btn-block" class="login-pieces" id="login-button">Login</button>
+          <button type="submit" class="submit-button">Login</button>
         </form>
-        <p class="lead mt-4" class="login-pieces" id="register">
+        <p class="register-check">
           No Account? <a href="/users/register">Register</a>
         </p>
-        </div>
-      </div>
-    </div>
-  </div>

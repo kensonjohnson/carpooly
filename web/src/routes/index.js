@@ -9,7 +9,12 @@ router.get("/", (req, res) => {
 });
 
 router.get("/dashboard", ensureAuthenticated, (req, res) => {
-  res.render("dashboard");
+  res.render("dashboard", {
+    user: "Audrey",
+  });
 });
 
 export default router;
+
+
+// fix footer

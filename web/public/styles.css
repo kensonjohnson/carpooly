@@ -5,12 +5,37 @@
 }
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  @font-face {
+    font-family: "Nunito";
+    src: url("/assets/Nunito/Nunito-VariableFont_wght.ttf")
+      format("ttf-variations");
+    /* font-weight: 125 950;
+    font-stretch: 75% 125%;
+    font-style: normal; */
+  }
+
+  @font-face {
+    font-family: "NunitoItalic";
+    src: url("/assets/Nunito/Nunito-Italic-VariableFont_wght.ttf")
+      format("ttf-variations");
+    /* font-weight: 125 950;
+    font-stretch: 75% 125%;
+    font-style: normal; */
+  }
+
+  @font-face {
+    font-family: "Righteous";
+    src: url("/assets/Righteous/Righteous-Regular.ttf") format("ttf-variations");
+    /* font-weight: 125 950;
+    font-stretch: 75% 125%;
+    font-style: normal; */
+  }
+  font-family: Righteous sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
 
-  --orange-light: #ffb7e8;
+  --orange-light: #fad5ee;
   --orange-dark-light: #dda382;
   --orange-dusk: #5c3c29;
   --orange-bright-dark: #b0521d;
@@ -49,12 +74,13 @@
 
 body {
   margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  place-items: center;
   height: 100vh;
   width: 100vw;
-  justify-content: start;
+  justify-content: space-between;
+  color: var(--orange-dark-light);
 }
 
 header {
@@ -67,30 +93,45 @@ header {
   justify-content: center;
 }
 
-/* #mainAndNav {
-  height: 85vh;
-  display: flex;
-  flex-direction: row;
-  width:  100%;
-} */
-
 #main {
   display: flex;
   flex-direction: column;
-  flex-grow: 4;
   align-items: center;
   width: 100%;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
 }
 
-.Title {
+.windows {
+  min-width: 80vw;
+  max-width: 1300px;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
   background-color: (var(--blue-dusk));
+  color: var(--orange-dark-light);
 }
 
 .info {
   background-image: url(assets/InfoBackGround-Dark.svg);
   min-width: 80vw;
-  min-height: 300px;
+  height: 0px;
+  transition: height 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.window-expand {
+  height: 300px;
+}
+
+.window-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #tear-drop {
@@ -99,62 +140,71 @@ header {
   border-width: 7px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-h2 {
-  font-size: 3.2em;
-  color: var(--orange-dark-light);
-}
-
 p {
-  font-size: 2.5em;
+  /* font-size: 2.5em; */
   color: var(--orange-light);
 }
 
-/* info {
-  background-color: var(--aqua-bright-dark);
-  border: 5px solid var(--orange-dusk);
-} */
+button {
+  background-color: var(--aqua-dusk);
+  font-size: 100%;
+  padding: 10px;
+  border-radius: 15%;
+  color: var(--orange-dark-light);
+  border: 3px solid var(--orange-bright-dark);
+}
+
+.login-form,
+.register-form {
+  background-color: var(--green-dusk);
+  height: fit-content;
+  width: fit-content;
+  margin-top: 2rem;
+  padding: 2rem;
+  border: 5px solid var(--orange-bright-dark);
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.form-h1 {
+  font-size: 3.2em;
+}
+
+.form-input {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.form-input > input {
+  background-color: var(--orange-dusk);
+}
+
+.submit-button {
+  width: 100%;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  border-color: var(--orange-light);
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.register-check {
+  font-size: 2vh;
+}
 
 #profile-pic {
   background-image: url("assets/default_profile_pic.png");
 }
 
-button {
-  background-color: var(--green-darkest);
-  font-size: 70%;
-  padding: 10px;
-  border-radius: 50%;
-  color: var(--aqua-light);
-  border: 5px solid var(--aqua-bright-dark);
-}
-
 footer {
   width: 100%;
   height: 90px;
+  font-size: 3vh;
   background-color: var(--green-banner);
 }
-/* 
-@media (prefers-color-scheme: light) {
-  #mainAndNav {
-    flex-direction: row;
-    flex: 1;
-  }
-  #main {
-    flex: 1;
-  }
-  #nav {flex: 0 0 12em}
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */

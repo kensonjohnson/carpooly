@@ -52,12 +52,6 @@ formatting:
 
 headings-
 Font: Nunito, bold;
-h1- font-size:
-h2- font-size:
-h3- font-size:
-h4- font-size:
-h5- font-size:
-h6- font-size:
 
 card- (generic container that holds misc data etc that's stylized appropriately)
 

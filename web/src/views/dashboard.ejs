@@ -1,6 +1,3 @@
-<header>
-  <img src="assets/BannerDark.png" />
-</header>
 <main id="main">
   <a href="/users/logout">Logout</a>
   <div id="currentCarpools">
@@ -13,17 +10,19 @@
     </div>
   </div>
   <div id="find">
-    <h2 class="Title">
-      Find My Carpools/ Friends<button class="button" id="friends">+ -</button>
-    </h2>
+    <div class="window-header">
+      <h2 class="Title">Find My Carpools/ Friends</h2>
+      <button class="button" id="friends">+ -</button>
+    </div>
     <div class="info" id="findMyPeeps">
       <input id="searchPeeps" />
     </div>
   </div>
   <div id="myProfile">
-    <h2 class="Title">
-      My Profile!<button class="button" id="profile">+ -</button>
-    </h2>
+    <div class="window-header">
+      <h2 class="Title">My Profile!</h2>
+      <button class="button" id="profile">+ -</button>
+    </div>
     <div class="info" id="profileInfo">
       <img id="profile-pic" />
       <p>This is who I am!</p>
@@ -31,9 +30,6 @@
     </div>
   </div>
 </main>
-<footer>
-  <p>Created February, 2023 by Kenson, Audrey and Olijijuan</p>
-</footer>
 <script>
   // calling IDs for individual windows
   const carpoolInfo = document.getElementById("carpoolInfo");

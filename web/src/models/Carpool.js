@@ -4,7 +4,7 @@ const CarpoolSchema = new Schema({
   owner: { type: Schema.Types.ObjectId, ref: "User", required: true },
   name: { type: String, required: true },
   members: [{ type: Schema.Types.ObjectId, ref: "User" }],
-  descrtiption: { type: String, required: false },
+  description: { type: String, required: false },
   createdAt: { type: Date, default: Date.now },
 });
 

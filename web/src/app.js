@@ -10,6 +10,8 @@ import session from "express-session";
 import passport from "passport";
 import indexRouter from "./routes/index.js";
 import usersRouter from "./routes/users.js";
+import dashboardRouter from "./routes/dashboard.js";
+import { ensureAuthenticated } from "./config/auth.js";
 import { emitKeypressEvents } from "readline";
 import open from "open";
 
@@ -68,6 +70,7 @@ app.use((req, res, next) => {
 // Routes
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/dashboard", ensureAuthenticated, dashboardRouter);
 
 const PORT = process.env.PORT || 5000;
 

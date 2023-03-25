@@ -1,0 +1,14 @@
+<h1>Create Carpool</h1>
+<form action="/dashboard/carpools/create" method="POST" class="register-form">
+  <div class="form-input">
+    <label for="name">Carpool Name</label>
+    <input type="name" id="name" name="name" placeholder="Enter Name" value="<%= typeof name != 'undefined' ? name : '' %>" />
+  </div>
+  <div class="form-input">
+    <label for="description">Description</label>
+    <textarea id="description" name="description" placeholder="Enter description" value="<%= typeof description != 'undefined' ? description : '' %>"></textarea>
+  </div>
+  <button type="submit" class="submit-button">Register</button>
+  <%- include("partials/messages") -%>
+</form>
+<p class="register-check"><a href="/dashboard">Back to dashboard</a></p>

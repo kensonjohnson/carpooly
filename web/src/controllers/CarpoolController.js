@@ -20,7 +20,7 @@ export async function createCarpool(req, res, next) {
     await newCarpool.save();
     user.carpoolsOwned.push(newCarpool._id);
     await user.save();
-    res.redirect("/dashboard");
+    res.redirect("/dashboard/carpools");
   } catch (err) {
     next(err);
   }

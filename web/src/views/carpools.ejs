@@ -1,0 +1,13 @@
+<a href="/dashboard/carpools/create">Create Carpool</a>
+<h1>Carpools Owned</h1>
+<ul>
+  <% locals.data.carpoolsOwned.forEach((carpool)=>{ %>
+  <li>
+    <form action="<%= `/dashboard/carpools/${carpool._id}/delete` %>" method="POST" style="display:flex; gap:1rem;">
+      <p><%= `${carpool.name} ` %></p>
+      <p><%= carpool.description %></p>
+      <button type="submit">Remove</button>
+    </form>
+  </li>
+  <% }) %>
+</ul>

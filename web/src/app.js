@@ -22,7 +22,7 @@ import passportConfig from "./config/passport.js";
 passportConfig(passport);
 
 // Connect to MongoDB
-let connectedToMongo = false;
+let connectedToMongo = false; // used by the dev tooling
 set("strictQuery", false);
 connect(process.env.MONGO_URI)
   .then(() => (connectedToMongo = true))

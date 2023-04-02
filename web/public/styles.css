@@ -198,8 +198,10 @@ button {
   font-size: 2vh;
 }
 
-#profile-pic {
-  background-image: url("assets/default_profile_pic.png");
+.avatar {
+  width: 8rem;
+  height: 8rem;
+  border: var(--orange-light) 5px solid;
 }
 
 footer {

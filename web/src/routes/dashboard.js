@@ -5,8 +5,31 @@ import { createCarpool } from "../controllers/CarpoolController.js";
 import Carpool from "../models/Carpool.js";
 import User from "../models/User.js";
 
-router.get("/", (req, res) => {
-  res.render("dashboard");
+router.get("/", ensureAuthenticated, async (req, res) => {
+  try {
+    const user = await User.findById(req.user._id);
+    const carpoolsOwned = Promise.all(
+      user.carpoolsOwned.map(async (carpoolID) => {
+        return Carpool.findById(carpoolID, {});
+      })
+    );
+    const carpoolsJoined = Promise.all(
+      user.carpoolsJoined.map((carpoolID) => {
+        return Carpool.findById(carpoolID, {});
+      })
+    );
+    const data = {
+      carpoolsOwned: await carpoolsOwned,
+      carpoolsJoined: await carpoolsJoined,
+    };
+    res.render("dashboard", {
+      data,
+    });
+  } catch (error) {
+    // TODO create Error page
+    // res.render("error", {error})
+    next(error);
+  }
 });
 
 router.get("/carpools", ensureAuthenticated, async (req, res) => {
@@ -26,7 +49,6 @@ router.get("/carpools", ensureAuthenticated, async (req, res) => {
       carpoolsOwned: await carpoolsOwned,
       carpoolsJoined: await carpoolsJoined,
     };
-    console.log("Data: ", data);
     res.render("carpools", {
       data,
     });

@@ -6,6 +6,7 @@ import { set, connect } from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
 import flash from "connect-flash";
+import MongoStore from "connect-mongo";
 import session from "express-session";
 import passport from "passport";
 import indexRouter from "./routes/index.js";
@@ -24,8 +25,11 @@ passportConfig(passport);
 // Connect to MongoDB
 let connectedToMongo = false; // used by the dev tooling
 set("strictQuery", false);
-connect(process.env.MONGO_URI)
-  .then(() => (connectedToMongo = true))
+const clientPromise = connect(process.env.MONGO_URI)
+  .then((result) => {
+    connectedToMongo = true;
+    return result.connection.getClient();
+  })
   .catch((err) =>
     console.log("Connection to MongoDB failed with message: ", err)
   );
@@ -47,7 +51,10 @@ app.use(urlencoded({ extended: false }));
 // Express session middleware
 app.use(
   session({
-    secret: "My Super Secret Phrase",
+    secret: process.env.SECRET_PHRASE,
+    store: MongoStore.create({
+      clientPromise: clientPromise,
+    }),
     resave: true,
     saveUninitialized: true,
   })

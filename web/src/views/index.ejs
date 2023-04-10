@@ -8,20 +8,20 @@
         <button id="signup" type="button">
           Sign Up
         </button>
-        <button id="login" type="button">
-          Log In
+        <button id="dashboard" type="button">
+          Dashboard
         </button>
       </div>
 
-  <script>
-    const signUpButton = document.getElementById("signup");
-    const logInButton = document.getElementById("login");
+      <script>
+        const signUpButton = document.getElementById("signup");
+        const dashboardButton = document.getElementById("dashboard");
 
-    signUpButton.onclick = () => {
-      location.href = "/users/register";
-    };
+        signUpButton.onclick = () => {
+          location.href = "/users/register";
+        };
 
-    logInButton.onclick = () => {
-      location.href = "/users/login";
-    };
-  </script>
+        dashboardButton.onclick = () => {
+          location.href = "/dashboard";
+        };
+      </script>

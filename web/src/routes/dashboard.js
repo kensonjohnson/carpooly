@@ -1,24 +1,21 @@
-import { response, Router } from "express";
+import { Router } from "express";
 const router = Router();
 import { ensureAuthenticated } from "../config/auth.js";
 import { createCarpool } from "../controllers/CarpoolController.js";
 import Carpool from "../models/Carpool.js";
 import User from "../models/User.js";
 
-router.get("/", (req, res) => {
-  res.render("dashboard");
-});
-
-router.get("/carpools", ensureAuthenticated, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-    const user = await User.findById(req.user._id);
+    const ownedCarpoolIds = req.user.carpoolsOwned;
+    const joinedCarpoolIds = req.user.carpoolsJoined;
     const carpoolsOwned = Promise.all(
-      user.carpoolsOwned.map(async (carpoolID) => {
+      ownedCarpoolIds.map(async (carpoolID) => {
         return Carpool.findById(carpoolID, {});
       })
     );
     const carpoolsJoined = Promise.all(
-      user.carpoolsJoined.map((carpoolID) => {
+      joinedCarpoolIds.map((carpoolID) => {
         return Carpool.findById(carpoolID, {});
       })
     );
@@ -26,15 +23,8 @@ router.get("/carpools", ensureAuthenticated, async (req, res) => {
       carpoolsOwned: await carpoolsOwned,
       carpoolsJoined: await carpoolsJoined,
     };
-    console.log("Data: ", data);
-    res.render("carpools", {
-      data,
-    });
-  } catch (error) {
-    // TODO create Error page
-    // res.render("error", {error})
-    next(error);
-  }
+    res.render("dashboard", { data });
+  } catch (error) {}
 });
 
 router.get("/carpools/create", ensureAuthenticated, (req, res) => {
@@ -50,16 +40,21 @@ router.post(
     try {
       const carpool = await Carpool.findById(req.params.id);
       const owner = await User.findById(carpool.owner);
+
+      // Filter out the carpool from the Owner's list
       owner.carpoolsOwned = owner.carpoolsOwned.filter((carpoolID) => {
-        console.log(carpoolID, carpool._id);
         return carpoolID.toString() !== carpool._id.toString();
       });
+      // Save the updated list
       await owner.save();
+
+      // Find all members of the carpool
       const members = await Promise.all(
         carpool.members.map((memberID) => {
           return User.findById(memberID);
         })
       );
+      // Filter the carpool out of each member's joined carpools list
       await Promise.all(
         members.map(async (member) => {
           member.carpoolsJoined = member.carpoolsJoined.filter((carpoolID) => {
@@ -68,9 +63,12 @@ router.post(
           return member.save();
         })
       );
+
+      // After everyone's data has been updated, we can remove the carpool.
       await Carpool.deleteOne({ _id: carpool._id });
       res.redirect("/dashboard");
     } catch (error) {
+      // TODO: Added error page
       next(error);
     }
   }

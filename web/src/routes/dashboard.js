@@ -5,17 +5,16 @@ import { createCarpool } from "../controllers/CarpoolController.js";
 import Carpool from "../models/Carpool.js";
 import User from "../models/User.js";
 
-router.get("/", async (req, res) => {
+router.get("/", ensureAuthenticated, async (req, res) => {
   try {
-    const ownedCarpoolIds = req.user.carpoolsOwned;
-    const joinedCarpoolIds = req.user.carpoolsJoined;
+    const user = await User.findById(req.user._id);
     const carpoolsOwned = Promise.all(
-      ownedCarpoolIds.map(async (carpoolID) => {
+      user.carpoolsOwned.map(async (carpoolID) => {
         return Carpool.findById(carpoolID, {});
       })
     );
     const carpoolsJoined = Promise.all(
-      joinedCarpoolIds.map((carpoolID) => {
+      user.carpoolsJoined.map((carpoolID) => {
         return Carpool.findById(carpoolID, {});
       })
     );
@@ -23,8 +22,14 @@ router.get("/", async (req, res) => {
       carpoolsOwned: await carpoolsOwned,
       carpoolsJoined: await carpoolsJoined,
     };
-    res.render("dashboard", { data });
-  } catch (error) {}
+    res.render("dashboard", {
+      data,
+    });
+  } catch (error) {
+    // TODO create Error page
+    // res.render("error", {error})
+    next(error);
+  }
 });
 
 router.get("/carpools/create", ensureAuthenticated, (req, res) => {

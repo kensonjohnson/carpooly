@@ -13,6 +13,7 @@
     "vite": "^4.1.0"
   },
   "dependencies": {
+    "aws-sdk": "^2.1360.0",
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^5.0.0",

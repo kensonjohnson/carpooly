@@ -4,7 +4,9 @@ import { ensureAuthenticated } from "../config/auth.js";
 import { createCarpool } from "../controllers/CarpoolController.js";
 import Carpool from "../models/Carpool.js";
 import User from "../models/User.js";
-import { uuidv4 } from "uuid";
+// import { v4 as uuidv4 } from "uuid";
+import AWS from "aws-sdk";
+// import { readFileSync } from "fs";
 
 router.get("/", ensureAuthenticated, async (req, res) => {
   try {
@@ -80,12 +82,33 @@ router.post(
   }
 );
 
+// Route to edit profile page
+router.get("/profile", ensureAuthenticated, (req, res) => {
+  const { name, profilePicURI } = req.user;
+  // console.log("HERE", req.user);
+  if (profilePicURI) {
+    const data = { name, profilePicURI };
+    res.render("profile", { data });
+  }
+
+  res.render("profile", { data: { name: "Default", profilePicURI: null } });
+});
+
 // Route to upload profile pic
 router.post(
   "/profile/upload-picture",
   ensureAuthenticated,
   async (req, res, next) => {
     const user = await User.findById(req.user._id);
+    const s3 = new AWS.S3({
+      accessKeyId: process.env.AWS_S3_ACCESS_KEY_ID,
+      secretAccessKey: process.env.AWS_S3_SECRET_ACCESS_KEY,
+    });
+    console.log(req.files);
+    // const blob = readFileSync(req.body.profilePic.files[0].path)
+    res.render("profile", {
+      data: { name: req.user.name, profilePicURI: req.user.profilePicURI },
+    });
   }
 );
 

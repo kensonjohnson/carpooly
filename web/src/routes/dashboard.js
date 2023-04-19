@@ -4,6 +4,7 @@ import { ensureAuthenticated } from "../config/auth.js";
 import { createCarpool } from "../controllers/CarpoolController.js";
 import Carpool from "../models/Carpool.js";
 import User from "../models/User.js";
+import { uuidv4 } from "uuid";
 
 router.get("/", ensureAuthenticated, async (req, res) => {
   try {
@@ -76,6 +77,15 @@ router.post(
       // TODO: Added error page
       next(error);
     }
+  }
+);
+
+// Route to upload profile pic
+router.post(
+  "/profile/upload-picture",
+  ensureAuthenticated,
+  async (req, res, next) => {
+    const user = await User.findById(req.user._id);
   }
 );
 

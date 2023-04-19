@@ -1,0 +1,8 @@
+<main>
+  <p><%= locals.data ? data.user.name : "Name Not Found" %></p>
+  <img src="<%= locals.data ? data.user.profilePicURI : "assets/default_profile_pic.png" %>" alt="Profile Pic">
+  <form action="/dashboard/profile/upload-picture" method="POST">
+    <input type="file" name="profilePic" id="profilePic">
+    <button type="submit">Upload New Profile Image</button>
+  </form>
+</main>

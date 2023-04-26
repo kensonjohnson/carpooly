@@ -54,8 +54,8 @@ We are a small group of self taught developers
 ![HTML]
 ![CSS]
 ![JavaScript]
-[![Vite][vite]][vite-url]  
- [![Mongo][mongodb]][mongodb-url]
+[![Vite][vite]][vite-url]
+[![Mongo][mongodb]][mongodb-url]
 [![Express][express]][express-url]
 [![Passport][passport]][passport-url]
 
@@ -116,18 +116,18 @@ git clone https://github.com/kensonjohnson/carpooly.git
 
 Create a file in the root directory called .env and add the following:
 
-```
-DB_CLUSTER_NAME=YOUR_CLUSTER_ADDRESS
-DB_NAME=YOUR_DB_NAME
-DB_USER=YOUR_DB_USERNAME
-DB_PASSWORD=YOUR_DB_USER_PASSWORD
-PORT=YOUR_PORT_CHOICE
+```env
+MONGO_URI=YOUR_MONGO_URI
+PORT=YOUR_PORT # Can be omitted, default is 5000
+NODE_ENV=dev # This enables the built in dev tooling
+SECRET_PHRASE="My Super Secret Phrase"
+AWS_S3_ACCESS_KEY_ID=YOUR_AWS_S3_TOKEN
+AWS_S3_SECRET_ACCESS_KEY=YOUR_AWS_ACCESS_TOKEN
 ```
 
-Replace YOUR_CLUSTER_ADDRESS with your MongoDB URI, local or Atlas information.
-Replace YOUR_DB_NAME with the database on that cluster you want to use.
-Replace YOUR_DB_USERNAME and YOUR_DB_USER_PASSWORD with admin user info for that database.
-Replace YOUR_PORT_CHOICE with whatever port you want to use. You can just use 5000 if you're in development.
+Replace YOUR_MONGO_URI with your MongoDB URI. This can be a local or Atlas instance.
+Replace YOUR_PORT with whatever port you want to use. This line can be deleted.
+Replace AWS_S3_ACCESS_KEY_ID and AWS_S3_SECRET_ACCESS_KEY with your AWS S3 information.
 
 If you're using Mongo Atlas, you should add 0.0.0.0/0 to the allowed IP list until development is done. REMEMBER TO CHANGE THIS TO YOUR SERVER IP UPON DEPLOYMENT.
 

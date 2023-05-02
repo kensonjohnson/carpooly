@@ -15,6 +15,7 @@ import dashboardRouter from "./routes/dashboard.js";
 import { ensureAuthenticated } from "./config/auth.js";
 import { emitKeypressEvents } from "readline";
 import open from "open";
+import fileupload from "express-fileupload";
 
 const app = express();
 
@@ -65,6 +66,9 @@ app.use(passport.session());
 
 // Connect flash middleware
 app.use(flash());
+
+// Use Express Fileupload (for S3 profile pic uploads)
+app.use(fileupload());
 
 // Global variables
 app.use((req, res, next) => {

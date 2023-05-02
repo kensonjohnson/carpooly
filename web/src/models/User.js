@@ -7,6 +7,7 @@ const UserSchema = new Schema({
   date: { type: Date, default: Date.now },
   carpoolsOwned: [{ type: Schema.Types.ObjectId, ref: "Carpool" }],
   carpoolsJoined: [{ type: Schema.Types.ObjectId, ref: "Carpool" }],
+  profilePicURI: { type: String },
 });
 
 UserSchema.virtual("numberOfOwnedCarpools").get(function () {

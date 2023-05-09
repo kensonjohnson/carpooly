@@ -20,9 +20,13 @@ router.get("/", ensureAuthenticated, async (req, res) => {
         return Carpool.findById(carpoolID, {});
       })
     );
+
+    const profilePicURI = user.profilePicURI;
+
     const data = {
       carpoolsOwned: await carpoolsOwned,
       carpoolsJoined: await carpoolsJoined,
+      profilePicURI,
     };
     res.render("dashboard", {
       data,

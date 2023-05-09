@@ -26,7 +26,9 @@
     </div>
     <div class="info" id="profileInfo">
       <a href="/dashboard/profile">Edit Profile</a>
-      <img src="/assets/default_profile_pic.png" id="profile-pic" class="avatar" />
+      <% console.log(locals.data.profilePicURI) %> <img src="<%=
+      locals.data.profilePicURI ? data.profilePicURI :
+      "/assets/default_profile_pic.png" %>" id="profile-pic" class="avatar" />
       <p>Hi, I'm...</p>
       <p>I am looking for......</p>
     </div>

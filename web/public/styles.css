@@ -117,7 +117,7 @@ header {
 }
 
 .info {
-  background-image: url(assets/InfoBackGround-Dark.svg);
+  background: linear-gradient(var(--aqua-bright-dark), var(--blue-bright-dark));
   min-width: 80vw;
   height: 0px;
   transition: height 0.5s ease-in-out;

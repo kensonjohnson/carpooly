@@ -12,12 +12,11 @@
   </div>
   <div id="find">
     <div class="window-header">
-      <h2 class="Title">Find My Carpools or Friends</h2>
-      <button class="button" id="friends">+ -</button>
+      <a href="/dashboard/carpools/search">
+        <h2 class="Title">Find My Carpools or Friends</h2>
+      </a>
     </div>
-    <div class="info" id="findMyPeeps">
-      <input id="searchPeeps" />
-    </div>
+
   </div>
   <div id="myProfile">
     <div class="window-header">
@@ -37,21 +36,15 @@
 <script>
   // calling IDs for individual windows
   const carpoolInfo = document.getElementById("carpoolInfo");
-  const findMyPeeps = document.getElementById("findMyPeeps");
   const profileInfo = document.getElementById("profileInfo");
 
   // calling IDs for individual buttons
   const carpoolsButton = document.getElementById("carpools");
-  const friendsButton = document.getElementById("friends");
   const profileButton = document.getElementById("profile");
 
   // set up addEventListeners for each button to collapse associated window div
   carpoolsButton.addEventListener("click", () => {
     carpoolInfo.classList.toggle("window-expand");
-  });
-
-  friendsButton.addEventListener("click", () => {
-    findMyPeeps.classList.toggle("window-expand");
   });
 
   profileButton.addEventListener("click", () => {

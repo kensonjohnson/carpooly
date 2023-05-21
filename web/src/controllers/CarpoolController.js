@@ -1,6 +1,35 @@
 import User from "../models/User.js";
 import Carpool from "../models/Carpool.js";
 
+// GET route /carpools
+export async function getCarpoolsPage(req, res) {
+  try {
+    const carpoolsOwned = Promise.all(
+      req.user.carpoolsOwned.map(async (carpoolID) => {
+        return Carpool.findById(carpoolID, {});
+      })
+    );
+    const carpoolsJoined = Promise.all(
+      req.user.carpoolsJoined.map((carpoolID) => {
+        return Carpool.findById(carpoolID, {});
+      })
+    );
+    const profilePicURI = req.user.profilePicURI;
+
+    const data = {
+      carpoolsOwned: await carpoolsOwned,
+      carpoolsJoined: await carpoolsJoined,
+      profilePicURI,
+    };
+    res.render("carpools", {
+      data,
+    });
+  } catch (error) {
+    //TODO: convert to res.render("error")
+    console.log(error);
+  }
+}
+
 // GET route /carpools/create
 export function getCreateCarpoolPage(req, res) {
   res.render("createCarpools");
@@ -63,10 +92,36 @@ export async function deleteCarpoolById(req, res) {
 
     // After everyone's data has been updated, we can remove the carpool.
     await Carpool.deleteOne({ _id: carpool._id });
-    res.redirect("/dashboard");
+    res.redirect("/dashboard/carpools");
   } catch (error) {
     // TODO: Added error page
     next(error);
   }
 }
 
+export function getSearchPage(req, res) {
+  res.render("findCarpools");
+}
+
+export async function getSearchResults(req, res) {
+  const searchString = req.body.searchbar;
+  console.log("Search String: ", searchString);
+  try {
+    if (searchString !== null && typeof searchString !== "undefined") {
+      const results = await Carpool.find({
+        name: { $regex: searchString, $options: "i" },
+      });
+      console.log("Search Results: ", results);
+
+      // const data = {
+      //   carpoolsOwned: req.user.carpoolsOwned,
+      //   carpoolsJoined: req.user.carpoolsJoined,
+      //   profilePicURI: req.user.profilePicURI,
+      //   results,
+      // };
+      res.render("findCarpools", { results });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}

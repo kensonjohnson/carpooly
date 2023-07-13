@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/kensonjohnson/carpooly">
-    <img src="web/public/assets/TearDropDark.png" alt="Logo" width="80" height="80">
+    <img src="docs/TearDropDark.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Carpooly App</h3>
@@ -51,13 +51,15 @@ We are a small group of self taught developers
 
 ### Built With:
 
-![HTML]
-![CSS]
-![JavaScript]
-[![Vite][vite]][vite-url]
-[![Mongo][mongodb]][mongodb-url]
-[![Express][express]][express-url]
-[![Passport][passport]][passport-url]
+![html]
+![css]
+![javascript]
+![typescript]
+![vite]
+![react]
+![mongodb]
+![express]
+![passport]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -68,108 +70,50 @@ We are a small group of self taught developers
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-<br />
+&nbsp;
 
 ## Installation
 
-<br />
-
-Clone the repo:
-
-```sh
-git clone https://github.com/kensonjohnson/carpooly.git
-```
-
-<br />
-
-### Web Instructions
-
-<br />
+&nbsp;
 
 1. You'll need node version 18 or higher.
+   Install from [the official website](https://nodejs.org/en/download "NodeJS Download Page").
 
-```sh
-   npm install npm@latest -g
-```
+2. Clone the repo: `git clone https://github.com/kensonjohnson/carpooly.git && cd carpooly`
 
-2. Move to the Web Project folder.
+3. Install dependencies with `npm run install`
 
-```sh
-   cd web
-```
+4. In the `/apps/api` directory, copy `.env.example` and rename the copy to `.env` and fill in the required details.
 
-3. Install dependencies.
+5. Start the development server with `npm run dev`
 
-```sh
-   npm install
-```
+&nbsp;
 
-4. Run the develpment server
+### Web Cont: The .env File
 
-```
-   npm run dev
-```
-
-<br />
-
-### Web Cont: Prepare MongoDB Connection File
-
-Create a file in the root directory called .env and add the following:
+The .env starts off with the following:
 
 ```env
-MONGO_URI=YOUR_MONGO_URI
-PORT=YOUR_PORT # Can be omitted, default is 5000
-NODE_ENV=dev # This enables the built in dev tooling
-SECRET_PHRASE="My Super Secret Phrase"
-AWS_S3_ACCESS_KEY_ID=YOUR_AWS_S3_TOKEN
-AWS_S3_SECRET_ACCESS_KEY=YOUR_AWS_ACCESS_TOKEN
+# Dev configurations
+PORT=8080
+
+# Database configuration
+MONGO_CONNECT_URI="mongodb+srv://<username>:<password>@CLUSTER_NAME.XXXXXXXX.mongodb.net/DB_NAME?retryWrites=true&w=majority"
 ```
 
-Replace YOUR_MONGO_URI with your MongoDB URI. This can be a local or Atlas instance.
-Replace YOUR_PORT with whatever port you want to use. This line can be deleted.
-Replace AWS_S3_ACCESS_KEY_ID and AWS_S3_SECRET_ACCESS_KEY with your AWS S3 information.
+Replace YOUR_PORT with whatever port you want to use.
+This line can be deleted.
+The default port is 8080.
 
-If you're using Mongo Atlas, you should add 0.0.0.0/0 to the allowed IP list until development is done. REMEMBER TO CHANGE THIS TO YOUR SERVER IP UPON DEPLOYMENT.
+Replace YOUR_MONGO_URI with your MongoDB URI. This can be a local or Atlas instance.  
+If you're using Mongo Atlas, you should add 0.0.0.0/0 to the allowed IP list until development is done.  
+REMEMBER TO CHANGE THIS TO YOUR SERVER IP UPON DEPLOYMENT.
 
 ### Mobile Instructions
 
 1. TBD
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Roadmap
-
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-  - [ ] Nested Feature
-
-See the [open issues](https://github.com/kensonjohnson/carpooly/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 ## License
 
@@ -188,14 +132,12 @@ Project Link: [Carpooly](https://github.com/kensonjohnson/carpooly)
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[html]: https://img.shields.io/badge/HTML-20232A?style=for-the-badge&logo=html5&logoColor=#E34F26
-[css]: https://img.shields.io/badge/CSS-20232A?style=for-the-badge&logo=css3&logoColor=#1572B6
-[javascript]: https://img.shields.io/badge/Javascript-20232A?style=for-the-badge&logo=javascript&logoColor=#F7DF1E
-[vite]: https://img.shields.io/badge/Vite-20232A?style=for-the-badge&logo=vite&logoColor=#646CFF
-[vite-url]: https://vitejs.dev/
-[mongodb]: https://img.shields.io/badge/MongoDB-20232A?style=for-the-badge&logo=mongodb&logoColor=#47A248
-[mongodb-url]: https://mongodb.com/
+[html]: https://img.shields.io/badge/HTML-20232A?style=for-the-badge&logo=html5
+[css]: https://img.shields.io/badge/CSS-20232A?style=for-the-badge&logo=css3
+[javascript]: https://img.shields.io/badge/Javascript-20232A?style=for-the-badge&logo=javascript
+[typescript]: https://img.shields.io/badge/Typescript-20232A?style=for-the-badge&logo=typescript
+[vite]: https://img.shields.io/badge/Vite-20232A?style=for-the-badge&logo=vite
+[react]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react
+[mongodb]: https://img.shields.io/badge/MongoDB-20232A?style=for-the-badge&logo=mongodb
 [express]: https://img.shields.io/badge/Express-20232A?style=for-the-badge&logo=express&logoColor=#000000
-[express-url]: https://expressjs.com/
 [passport]: https://img.shields.io/badge/Passport-20232A?style=for-the-badge&logo=passport&logoColor=#34E27A
-[passport-url]: https://www.passportjs.org/
